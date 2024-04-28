@@ -1,0 +1,12 @@
+---
+# https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack
+- name: List.C/C++ Extension Pack
+  ansible.builtin.shell: "code --install-extension {{ item }}"
+  args:
+    creates: "{{ ansible_env.HOME }}/.vscode/extensions/{{ item | lower }}*"
+  loop:
+  - ms-vscode.cpptools
+  - ms-vscode.cpptools-themes
+  - twxs.cmake
+  - ms-vscode.cmake-tools
+
